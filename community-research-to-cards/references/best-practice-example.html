@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.card {
+  width: 1200px; height: 1600px;
+  background: #000000;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 80px 72px;
+}
+.card::before {
+  content: ''; position: absolute;
+  top: -300px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(0,255,148,0.04) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.tag {
+  font-size: 26px; font-weight: 700;
+  padding: 10px 28px; border-radius: 36px;
+  letter-spacing: 3px; margin-bottom: 40px;
+  position: relative; z-index: 1;
+  color: #667eea; border: 2px solid rgba(102,126,234,0.4);
+}
+.content {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: center; position: relative; z-index: 1;
+}
+.quote {
+  font-size: 44px; line-height: 1.5;
+  color: white;
+  font-weight: 600; margin-bottom: 48px;
+  letter-spacing: 0.3px;
+}
+.quote-zh {
+  font-size: 30px; line-height: 1.5;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.footer {
+  padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  position: relative; z-index: 1;
+}
+.avatar {
+  width: 68px; height: 68px; border-radius: 50%;
+  display: inline-block; vertical-align: middle;
+  line-height: 68px; text-align: center;
+  font-size: 30px; font-weight: 700; color: white;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  margin-right: 22px;
+}
+.info {
+  display: inline-block; vertical-align: middle;
+}
+.name {
+  font-size: 32px; font-weight: 700; color: white;
+  display: block;
+}
+.role {
+  font-size: 26px; color: rgba(255,255,255,0.6);
+  display: block; margin-top: 6px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="tag">HACKER NEWS</span>
+  <div class="content">
+    <div class="quote">"After having been a happy user of Qwen3.6-27B for a few weeks… I'm forced to use Claude Sonnet 4.6. It is such a downgrade."</div>
+    <div class="quote-zh">"当了 Qwen 几周开心用户后，被迫切回 Claude Sonnet 4.6。简直是降级体验。"</div>
+  </div>
+  <div class="footer">
+    <div class="avatar">H</div><div class="info"><span class="name">hypfer</span><span class="role">Hacker News · 2×RTX 3090 · Q6_K_XL + MTP</span></div>
+  </div>
+</div>
+</body>
+</html>

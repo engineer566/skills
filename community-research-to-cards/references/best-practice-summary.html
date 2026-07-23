@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.card {
+  width: 1200px; height: 1600px;
+  background: #000000;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 80px 72px;
+}
+.card::before {
+  content: ''; position: absolute;
+  top: -300px; left: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(0,255,148,0.04) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.title-area { margin-bottom: 48px; position: relative; z-index: 1; }
+.series-label {
+  font-size: 28px; font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 2px; margin-bottom: 16px;
+}
+.main-title {
+  font-size: 56px; font-weight: 700; color: white;
+  line-height: 1.2;
+}
+.subtitle {
+  font-size: 26px; font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  margin-top: 16px;
+}
+.bullets {
+  flex: 1;
+  display: flex; flex-direction: column;
+  justify-content: center; gap: 44px;
+  position: relative; z-index: 1;
+}
+.bullet {
+  display: flex; align-items: flex-start; gap: 32px;
+}
+.bullet-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 34px; flex-shrink: 0;
+  margin-top: 4px;
+}
+.bullet-icon.green { background: rgba(0,255,148,0.2); color: #00FF94; }
+.bullet-icon.orange { background: rgba(255,149,0,0.2); color: #ff9500; }
+.bullet-icon.blue { background: rgba(0,122,255,0.2); color: #007aff; }
+.bullet-text {
+  font-size: 38px; color: rgba(255,255,255,0.92);
+  line-height: 1.45;
+}
+.bullet-text strong { color: white; }
+.sources {
+  padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  position: relative; z-index: 1;
+}
+.sources-line {
+  font-size: 22px; font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="title-area">
+    <div class="series-label">社区调研 · 2026.04 - 07</div>
+    <div class="main-title">Qwen3.6-27B<br>开源社区口碑</div>
+    <div class="subtitle">Reddit · Hacker News · 技术博客 · 6 位社区成员的真实声音</div>
+  </div>
+
+  <div class="bullets">
+    <div class="bullet">
+      <div class="bullet-icon green">✓</div>
+      <div class="bullet-text"><strong>共识</strong>：最值得本地部署的编码模型。AA 评分 37，远超同规模均值 9，接近 GPT-5 水平。</div>
+    </div>
+    <div class="bullet">
+      <div class="bullet-icon orange">!</div>
+      <div class="bullet-text"><strong>争议</strong>：量化到 Q3 以下性能大幅下降；端到端 agent 任务（DeepSWE）得分仅 2%。但社区普遍认为该基准难度极高，模型之间差距很小。</div>
+    </div>
+    <div class="bullet">
+      <div class="bullet-icon blue">→</div>
+      <div class="bullet-text"><strong>建议</strong>：Q6_K + MTP + 2×GPU（约 2000 元），可替代 $20-100/月订阅，1.5-2 个月收回硬件成本。</div>
+    </div>
+  </div>
+
+  <div class="sources">
+    <div class="sources-line">来源：r/LocalLLaMA · Hacker News · Quesma Blog · Artificial Analysis</div>
+  </div>
+</div>
+</body>
+</html>

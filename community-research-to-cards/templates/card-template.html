@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.card {
+  width: 1200px; height: 1600px;
+  background: #000000;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 80px 72px;
+}
+/* 右上角渐变光晕 */
+.card::before {
+  content: ''; position: absolute;
+  top: -300px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(0,255,148,0.04) 0%, transparent 70%);
+  border-radius: 50%;
+}
+/* 顶部标签 26px/700，2px彩色边框 */
+.tag {
+  font-size: 26px; font-weight: 700;
+  padding: 10px 28px; border-radius: 36px;
+  letter-spacing: 3px; margin-bottom: 40px;
+  position: relative; z-index: 1;
+  /* color + border-color 每人不同色 */
+}
+/* 引语区 flex 居中 */
+.content {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: center; position: relative; z-index: 1;
+}
+/* 英文 44px 纯白 600 */
+.quote {
+  font-size: 44px; line-height: 1.5;
+  color: white;
+  font-weight: 600; margin-bottom: 48px;
+  letter-spacing: 0.3px;
+}
+/* 中文 30px 0.75 500 */
+.quote-zh {
+  font-size: 30px; line-height: 1.5;
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+/* 底部：头像68px + 文字 */
+.footer {
+  padding-top: 48px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  position: relative; z-index: 1;
+}
+.avatar {
+  width: 68px; height: 68px; border-radius: 50%;
+  display: inline-block; vertical-align: middle;
+  line-height: 68px; text-align: center;
+  font-size: 30px; font-weight: 700; color: white;
+  /* background: 每人不同渐变色 */
+  margin-right: 22px;
+}
+.info { display: inline-block; vertical-align: middle; }
+.name { font-size: 32px; font-weight: 700; color: white; display: block; }
+.role { font-size: 26px; color: rgba(255,255,255,0.6); display: block; margin-top: 6px; }
+
+/* 总结卡专用：图标72px，正文38px */
+.summary-bullets { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 44px; }
+.bullet { display: flex; align-items: flex-start; gap: 32px; }
+.bullet-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 34px; flex-shrink: 0; margin-top: 4px;
+}
+.bullet-text { font-size: 38px; color: rgba(255,255,255,0.92); line-height: 1.45; }
+.bullet-text strong { color: white; }
+
+/* 封面专用 */
+.cover-badge {
+  font-size: 28px; font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  border: 2px solid rgba(255,255,255,0.2);
+  display: inline-block; padding: 10px 24px; border-radius: 30px;
+  align-self: flex-start; margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+.cover-title { font-size: 76px; font-weight: 700; color: white; line-height: 1.15; }
+.cover-subtitle { font-size: 32px; color: rgba(255,255,255,0.6); font-weight: 500; margin-top: 28px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <!-- 人物卡 -->
+  <span class="tag" style="color:#667eea;border-color:rgba(102,126,234,0.4);">PLATFORM</span>
+  <div class="content">
+    <div class="quote">"English quote here."</div>
+    <div class="quote-zh">"中文翻译在这里。"</div>
+  </div>
+  <div class="footer">
+    <div class="avatar" style="background:linear-gradient(135deg,#667eea,#764ba2);">X</div>
+    <div class="info">
+      <span class="name">Username</span>
+      <span class="role">Description · Config</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
